@@ -16,9 +16,10 @@ export default function Index() {
     console.log(data)
   return (
     <div>
-        <h1 className='container mt-5 mb-3'>{data.name}</h1>
-        <div className='mainCard container d-flex justify-content-between'>
-        <div className="card mb-3" style={{maxWidth: '54rem'}}>
+      <div className="mainCard">
+        <h1 className='container mt-5 mb-3' style={{fontFamily: "Poppins"}}>{data.name}</h1>
+        <div className='container d-flex justify-content-between'>
+        <div className="card border-0 mb-3" style={{maxWidth: '54rem'}}>
           <div className="row g-0">
             <div className="col-md-4">
               <img src={img} className="img-fluid rounded-start" alt="..."/>
@@ -39,11 +40,17 @@ export default function Index() {
             <p className="card-text"><strong>Show Type: {data.type}</strong></p>
             <p className="card-text"><strong>Genres: {data.genres?data.genres.join(','):""}</strong></p>
             Official site:<a className="card-text"><strong> {data.url}</strong></a> 
-
-
           </div>
         </div>
         </div>
+        </div>
+        <style>
+          {`@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@600&        display=swap');
+             .mainCard{
+              font-family: 'Roboto', sans-serif;
+             }
+          `}
+        </style>
     </div>
   )
 }
